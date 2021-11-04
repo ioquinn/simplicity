@@ -9,8 +9,11 @@ def index():
 
 @app.route("/search")
 def search():
-	query = request.args["query"]
-	# TODO Sanitize query
-	# 
-	urls = rank(query)
-	return render_template("results.html", urls=urls)
+    query = request.args["query"]
+    # TODO Sanitize query
+    # 
+    urls = rank(query)
+    if urls is not None:
+        return render_template("results.html", urls=urls)
+
+    return {"message": "Failed"}

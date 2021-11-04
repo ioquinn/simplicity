@@ -3,3 +3,5 @@ SQLAlchemy
 beautifulsoup4
 mysqlclient
 validators
+requests
+nltk
